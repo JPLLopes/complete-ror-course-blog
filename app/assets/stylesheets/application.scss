@@ -17,3 +17,32 @@
 @import "bootstrap";
 @import "home";
 @import 'articles';
+
+html, body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: lightgrey;
+}
+
+.flex-0 {
+  flex: 0;
+}
+
+.navbar {
+  background-color: black;
+}
+
+.navbar-brand {
+  color: white;
+}
+
+.navbar-brand:hover {
+  color: white;
+}
+
+.nav-link {
+  color: white !important;
+}
