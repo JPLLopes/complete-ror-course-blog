@@ -32,6 +32,9 @@ gem "bootstrap"
 # Sass
 gem "sassc-rails"
 
+# Pagination
+gem 'will_paginate', '~> 4.0'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
