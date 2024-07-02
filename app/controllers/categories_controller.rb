@@ -7,10 +7,15 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @articles = @category.articles.paginate(page: params[:page], per_page: 5)
   end
 
   def new
     @category = Category.new
+  end
+
+  def edit
+    @category = Category.find(params[:id])
   end
 
   def create
@@ -22,6 +27,18 @@ class CategoriesController < ApplicationController
       redirect_to category_url(@category)
     else
       render 'new', status: :unprocessable_content
+    end
+  end
+
+  def update
+    @category = Category.find(params[:id])
+
+    if @category.update(category_params)
+      flash[:notice] = "Category updated successfully."
+
+      redirect_to category_path(@category)
+    else
+      render 'edit', status: :unprocessable_content
     end
   end
 
