@@ -9,8 +9,8 @@ class ListCategoriesTest < ActionDispatch::IntegrationTest
   test "should show categories listing" do
     get '/categories'
     assert_response :success
+
     assert_select("a[href=?]", category_path(@category), text: @category.name)
     assert_select("a[href=?]", category_path(@category2), text: @category2.name)
-
   end
 end
